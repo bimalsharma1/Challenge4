@@ -16,7 +16,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
-import { Rating } from "./../components/games/rating.model"
+import { Rating } from "./../models/rating.model"
 
 
 export interface IGamesDataService {
@@ -26,7 +26,7 @@ export interface IGamesDataService {
 }
 
 @Injectable()
-export class GamesDataService  implements IGamesDataService {
+export class GamesDataService implements IGamesDataService {
    
     headers: Headers;
     options: RequestOptions;

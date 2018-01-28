@@ -11,23 +11,18 @@ import { Game } from "./../../models/game.model"
 
 @Component({
     selector: 'games',
-    templateUrl: './games.component.html',
-    styleUrls: ['./games.component.css']
+    templateUrl: './rate-games.component.html',
+    styleUrls: ['./rate-games.component.css']
 })
-export class GamesComponent implements OnInit {
+export class RateGamesComponent implements OnInit {
     public games: Game[]
     isEditing: boolean
     newDescription: string
     baseUrl: string
-    user: {};
     subscription: Subscription;
-    public alive: boolean
-    //http://localhost:54621/api/Games
-    //http://gamesreviewapi20180128095219.azurewebsites.net
 
     constructor(private router: Router, private http: Http, @Inject('BASE_URL') baseUrl: string, private gamesDataService: GamesDataService) {
         this.baseUrl =  baseUrl
-        this.alive = true;
         this.isEditing = false
     }
 
@@ -36,23 +31,10 @@ export class GamesComponent implements OnInit {
         this.gamesDataService.getGames(url).subscribe((data) => {
             this.games = data.json();
         })
-            
     }
  
     ngOnDestroy() {
-        
         //this.subscription.unsubscribe()
-    }
-
-
-    saveDescription(itemCode: string, description: string): void {
-        this.isEditing = !this.isEditing
-        let url = this.baseUrl + 'api/Games/' + itemCode + "/" + description
-        this.gamesDataService.updateGameDescription(url, description)
-            .subscribe(result => console.log(result),
-                error => console.log(" error message from api" + error.toString())
-            );
-            
     }
 
     addRating(itemCode: number, rating: number): void {
@@ -63,10 +45,6 @@ export class GamesComponent implements OnInit {
             error => console.log("error message from api" + error));
     }
   
-    toggleEditMode(event:any): void {
-        this.isEditing = !this.isEditing
-        console.log(this.isEditing)
-    }
 
 
 }
