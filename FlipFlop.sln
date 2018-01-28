@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlipFlop", "FlipFlop\FlipFlop.csproj", "{1F71337A-FB9D-46EE-8101-81CBAF8F5F8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Receipt", "Receipt\Receipt.csproj", "{A005D27C-BE8D-432B-93CB-B7C841543098}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B61CBF60-42EC-40BD-A192-BF6975766F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptTests", "ReceiptTests\ReceiptTests.csproj", "{8E18398C-0C31-4C53-BBD3-25EB0C35A22B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesReviewAPI", "GamesReviewAPI\GamesReviewAPI.csproj", "{8EB10669-F51E-44F2-887F-0FA53AA718F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesReview", "GamesReview\GamesReview.csproj", "{8897D639-C91C-4116-B6FA-97EA5A895B53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F71337A-FB9D-46EE-8101-81CBAF8F5F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F71337A-FB9D-46EE-8101-81CBAF8F5F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F71337A-FB9D-46EE-8101-81CBAF8F5F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F71337A-FB9D-46EE-8101-81CBAF8F5F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A005D27C-BE8D-432B-93CB-B7C841543098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A005D27C-BE8D-432B-93CB-B7C841543098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A005D27C-BE8D-432B-93CB-B7C841543098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A005D27C-BE8D-432B-93CB-B7C841543098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E18398C-0C31-4C53-BBD3-25EB0C35A22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E18398C-0C31-4C53-BBD3-25EB0C35A22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E18398C-0C31-4C53-BBD3-25EB0C35A22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E18398C-0C31-4C53-BBD3-25EB0C35A22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB10669-F51E-44F2-887F-0FA53AA718F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB10669-F51E-44F2-887F-0FA53AA718F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB10669-F51E-44F2-887F-0FA53AA718F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB10669-F51E-44F2-887F-0FA53AA718F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8897D639-C91C-4116-B6FA-97EA5A895B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8897D639-C91C-4116-B6FA-97EA5A895B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8897D639-C91C-4116-B6FA-97EA5A895B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8897D639-C91C-4116-B6FA-97EA5A895B53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E18398C-0C31-4C53-BBD3-25EB0C35A22B} = {B61CBF60-42EC-40BD-A192-BF6975766F3E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B8D44BD-833F-4BD5-8666-315201A705A6}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+
+.games {
+    background-color: lightgray;
+    padding: 5px;
+    margin: 1px 1px 1px 1px;
+   
+    
+}
+.star {
+    color: white;
+    cursor:pointer;
+}
+.star:hover {
+    color:yellow;
+}

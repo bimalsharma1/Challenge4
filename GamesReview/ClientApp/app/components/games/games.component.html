@@ -1,0 +1,25 @@
+<div>
+    
+    <div class="games row" *ngFor="let game of games">
+        <span class="col-12 col-sm-12 col-md-4 col-lg-3">{{game.title}}</span>
+        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="isEditing">
+            <input type="text" [(ngModel)]="game.description" />
+            <span class="glyphicon glyphicon-floppy-save" (click)="saveDescription(game.code, game.description)"></span>
+        </span>
+        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="!isEditing">
+            <span>{{game.description}}</span>
+            <span class="glyphicon glyphicon-edit" (click)="toggleEditMode($event)"></span> Edit
+        </span>
+        
+        <p class="col-12 col-sm-12 col-md-12 col-lg-4">
+            <span>{{game.rating}}</span>
+            Rating 
+            <span class="glyphicon glyphicon-star-empty star" (click)="addRating(game.code, 1)"></span>
+            <span class="glyphicon glyphicon-star-empty star" (click)="addRating(game.code, 2)"></span>
+            <span class="glyphicon glyphicon-star-empty star" (click)="addRating(game.code, 3)"></span>
+            <span class="glyphicon glyphicon-star-empty star" (click)="addRating(game.code, 4)"></span>
+            <span class="glyphicon glyphicon-star-empty star" (click)="addRating(game.code, 5)"></span>
+        </p>
+    </div>
+</div>
+
