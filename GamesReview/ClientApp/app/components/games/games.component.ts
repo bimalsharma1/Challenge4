@@ -45,8 +45,8 @@ export class GamesComponent implements OnInit {
     }
 
 
-    saveDescription(itemCode: string, description: string): void {
-        this.isEditing = !this.isEditing
+    saveDescription(itemCode: string, description: string, game: Game): void {
+        this.toggleEditMode(game)
         let url = this.baseUrl + 'api/Games/' + itemCode + "/" + description
         this.gamesDataService.updateGameDescription(url, description)
             .subscribe(result => console.log(result),
@@ -63,9 +63,14 @@ export class GamesComponent implements OnInit {
             error => console.log("error message from api" + error));
     }
   
-    toggleEditMode(event:any): void {
+    toggleEditMode(game:Game): void {
         this.isEditing = !this.isEditing
-        console.log(this.isEditing)
+       
+
+        let index = this.games.indexOf(game);
+        game.isSelected = !game.isSelected
+
+        this.games[index] = game;
     }
 
 

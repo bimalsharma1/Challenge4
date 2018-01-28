@@ -3,5 +3,5 @@
     title: string;
     description: string;
     rating: number;
-    selected: boolean;
+    isSelected: boolean;
 } 
