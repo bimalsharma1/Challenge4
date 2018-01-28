@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptTests", "ReceiptTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesReviewAPI", "GamesReviewAPI\GamesReviewAPI.csproj", "{8EB10669-F51E-44F2-887F-0FA53AA718F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesReview", "GamesReview\GamesReview.csproj", "{8897D639-C91C-4116-B6FA-97EA5A895B53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesReview", "GamesReview\GamesReview.csproj", "{8897D639-C91C-4116-B6FA-97EA5A895B53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
