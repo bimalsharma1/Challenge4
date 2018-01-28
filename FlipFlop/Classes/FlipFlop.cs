@@ -1,13 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 namespace FlipFlop.Classes
 {
     public static class FlipFlop
     {
-        public static string DisplayValue(int n)
+        public static string DisplayFlipFlop()
+        {
+            var flipFlopData = "";
+            var maxNum = 100;
+            for (int i = 1; i <= maxNum; i++)
+            {
+                flipFlopData += DisplayValue(i);
+                if (i != maxNum)
+                {
+                    flipFlopData += ", ";
+                }
+            }
+
+            return flipFlopData;
+        }
+
+        private static string DisplayValue(int n)
         {
             var flip = "Flip";
             var flop = "Flop";
