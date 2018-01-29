@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Receipt.Models;
-using Receipt.Classes;
 using System.Globalization;
 
 namespace Receipt.Classes
@@ -13,7 +12,6 @@ namespace Receipt.Classes
 
         public Receipts()
         {
-
         }
 
         public override string ToString()
