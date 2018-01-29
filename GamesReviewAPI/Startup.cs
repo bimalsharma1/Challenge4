@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GamesReviewAPI.Classes;
+using GamesReviewAPI.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -27,6 +29,8 @@ namespace GamesReviewAPI
             services.AddMvc()
                 .AddMvcOptions(o => o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter()));
             services.AddCors();
+
+            services.AddTransient<IGameReviews, GamesReviews>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,9 +1,9 @@
 <div>
     <div class="games row" *ngFor="let game of games">
         <span class="col-12 col-sm-12 col-md-4 col-lg-3">Title:  {{game.title}}</span>
-        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="game.isSelected" (click)="saveDescription(game.code, game.description, game)">
+        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="game.isSelected">
             <textarea rows="5" cols="50" type="text" [(ngModel)]="game.description"></textarea> 
-            <span class="glyphicon glyphicon-floppy-save glyp-size" >Save</span>
+            <span class="glyphicon glyphicon-floppy-save glyp-size" (click)="saveDescription(game.code, game.description, game)">Save</span>
         </span>
         <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="!game.isSelected" (click)="toggleEditMode(game)">
             <span>Description: {{game.description}}</span>

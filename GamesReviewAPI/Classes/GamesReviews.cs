@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace GamesReviewAPI.Classes
 {
-    public static class GamesReviews
+    public class GamesReviews: Interfaces.IGameReviews
     {
-        public static IEnumerable<GameReview> GetGamesAndReviews()
+        public IEnumerable<GameReview> GetGamesAndReviews()
         {
             List<GameReview> gamesReview = new List<GameReview>();
             foreach (var game in GamesDataStore.Current.Games)

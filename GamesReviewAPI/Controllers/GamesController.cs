@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using GamesReviewAPI.DataStores;
+using GamesReviewAPI.Interfaces;
 using GamesReviewAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GamesReviewAPI.Controllers
@@ -13,27 +10,23 @@ namespace GamesReviewAPI.Controllers
     [Route("api/Games")]
     public class GamesController : Controller
     {
+        private readonly IGameReviews _gamesReviews;
+
+        public GamesController(IGameReviews gamesReviews)
+        {
+            _gamesReviews = gamesReviews;
+        }
+
         // GET: api/Games
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(Classes.GamesReviews.GetGamesAndReviews());
+            return Ok(_gamesReviews.GetGamesAndReviews());//Classes.GamesReviews.GetGamesAndReviews()
         }
-
-        //  [HttpGet("{id}", Name = "Get")]
-
-        //[HttpGet(Name = "Get")]
-
-        //// GET: api/Games/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
 
         //// POST: api/Games
         [HttpPost("{code}/{rating}")]
-        public IActionResult Post(int code, int rating)//(Review reviewItem)//[FromBody]
+        public IActionResult Post(int code, int rating)// --from body is the alternative method  :  (Review reviewItem)//[FromBody]
         {
             Review reviewItem = new Review
             {
