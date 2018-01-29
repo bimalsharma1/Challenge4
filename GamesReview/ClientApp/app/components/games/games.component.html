@@ -1,18 +1,17 @@
 <div>
     <div class="games row" *ngFor="let game of games">
-        <span class="col-12 col-sm-12 col-md-4 col-lg-3">{{game.title}}</span>
-        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="game.isSelected">
-            <input type="text" [(ngModel)]="game.description" />
-            <span class="glyphicon glyphicon-floppy-save" (click)="saveDescription(game.code, game.description, game)"></span>
+        <span class="col-12 col-sm-12 col-md-4 col-lg-3">Title:  {{game.title}}</span>
+        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="game.isSelected" (click)="saveDescription(game.code, game.description, game)">
+            <textarea rows="5" cols="50" type="text" [(ngModel)]="game.description"></textarea> 
+            <span class="glyphicon glyphicon-floppy-save glyp-size" >Save</span>
         </span>
-        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="!game.isSelected">
-            <span>{{game.description}}</span>
-            <span class="glyphicon glyphicon-edit" (click)="toggleEditMode(game)"></span> Edit
+        <span class="col-12 col-sm-12 col-md-8 col-lg-5" *ngIf="!game.isSelected" (click)="toggleEditMode(game)">
+            <span>Description: {{game.description}}</span>
+            <span class="glyphicon glyphicon-edit edit-font glyp-size"></span><span class="edit-font">Click to Edit</span>
         </span>
 
         <p class="col-12 col-sm-12 col-md-12 col-lg-4">
-            <span>{{game.rating}}</span>
-            Rating
+            Game Rating:
             <span class="glyphicon glyphicon-star-empty star" [ngClass]="{'star-highlighted':game.rating > 0}"></span>
             <span class="glyphicon glyphicon-star-empty star" [ngClass]="{'star-highlighted':game.rating > 1}"></span>
             <span class="glyphicon glyphicon-star-empty star" [ngClass]="{'star-highlighted':game.rating > 2}"></span>

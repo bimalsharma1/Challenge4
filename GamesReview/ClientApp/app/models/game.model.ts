@@ -4,4 +4,5 @@
     description: string;
     rating: number;
     isSelected: boolean;
+    clickedMessage: string;
 } 

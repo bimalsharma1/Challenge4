@@ -14,12 +14,12 @@ import { Game } from "./../../models/game.model"
     templateUrl: './rate-games.component.html',
     styleUrls: ['./rate-games.component.css']
 })
-export class RateGamesComponent implements OnInit {
+export class RateGamesComponent implements OnInit, OnDestroy {
     public games: Game[]
     isEditing: boolean
     newDescription: string
     baseUrl: string
-    subscription: Subscription;
+    private subscriptions = new Subscription();
 
     constructor(private router: Router, private http: Http, @Inject('BASE_URL') baseUrl: string, private gamesDataService: GamesDataService) {
         this.baseUrl =  baseUrl
@@ -28,21 +28,30 @@ export class RateGamesComponent implements OnInit {
 
     ngOnInit() {
         let url = this.baseUrl + 'api/Games'
-        this.gamesDataService.getGames(url).subscribe((data) => {
+        let subscriptions = this.gamesDataService.getGames(url)
+            .subscribe((data) => {
             this.games = data.json();
         })
     }
  
     ngOnDestroy() {
-        //this.subscription.unsubscribe()
+        this.subscriptions.unsubscribe()
     }
 
-    addRating(itemCode: number, rating: number): void {
-        let url = this.baseUrl + 'api/Games/' + itemCode.toString() + "/" + rating
-
-        this.gamesDataService.addRating(url, itemCode, rating)
-            .subscribe(result => console.log("message from api" + result),
+    addRating(game: Game, rating: number): void {
+        let url = this.baseUrl + 'api/Games/' + game.code.toString() + "/" + rating
+        this.setVotedMessage(game)
+        this.gamesDataService.addRating(url, game.code, rating)
+            .subscribe(
+            
+            result => console.log("message from api" + result),
             error => console.log("error message from api" + error));
+    }
+
+    setVotedMessage(game: Game): void {
+        let index = this.games.indexOf(game);
+        game.clickedMessage = "Thank you for voting"
+        this.games[index] = game;
     }
   
 

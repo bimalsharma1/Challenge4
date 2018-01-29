@@ -33,15 +33,14 @@ export class GamesComponent implements OnInit {
 
     ngOnInit() {
         let url = this.baseUrl + 'api/Games'
-        this.gamesDataService.getGames(url).subscribe((data) => {
+        this.subscription = this.gamesDataService.getGames(url).subscribe((data) => {
             this.games = data.json();
         })
             
     }
  
     ngOnDestroy() {
-        
-        //this.subscription.unsubscribe()
+        this.subscription.unsubscribe()
     }
 
 
@@ -54,22 +53,11 @@ export class GamesComponent implements OnInit {
             );
             
     }
-
-    addRating(itemCode: number, rating: number): void {
-        let url = this.baseUrl + 'api/Games/' + itemCode.toString() + "/" + rating
-
-        this.gamesDataService.addRating(url, itemCode, rating)
-            .subscribe(result => console.log("message from api" + result),
-            error => console.log("error message from api" + error));
-    }
   
     toggleEditMode(game:Game): void {
         this.isEditing = !this.isEditing
-       
-
         let index = this.games.indexOf(game);
         game.isSelected = !game.isSelected
-
         this.games[index] = game;
     }
 

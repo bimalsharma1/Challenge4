@@ -3,8 +3,9 @@
     background-color: lightgray;
     padding: 5px;
     margin: 1px 1px 1px 1px;
-   
-    
+}
+.edit-font {
+    color: blue;
 }
 .star {
     color: white;
